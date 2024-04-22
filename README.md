@@ -1,2 +1,2 @@
 # Vim-Cats
-I just want my cat in vim
+Learning vimscript so I can have my cat in vim
