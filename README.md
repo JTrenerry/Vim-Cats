@@ -4,7 +4,7 @@ Learning vimscript so I can have my cat in vim (Changed to neovim so I am now us
 ## Installation
 ##### No plugin manager support at the moment
    
-Download the cats.lua file and add it to a folder under ```~/.config/nvim/```. I use ```~/.config/nvim/lua/```
+Download the cats.lua file and add it to a folder under ```~/.config/nvim/```. I personally use ```~/.config/nvim/lua/```
 
 In your init.vim add:
 ```   
