@@ -1,2 +1,2 @@
 #!/bin/bash
-cp ./cats.lua ~/.config/nvim/JTrenerry/Vim-Cats 
+cp ./cats.lua ~/.config/nvim/lua/cats.lua 
