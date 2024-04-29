@@ -1,3 +1,4 @@
+-- Global value so I can toggle
 local buf = nil
 
 function display_ascii_art()
@@ -42,7 +43,6 @@ function display_ascii_art()
     
     -- Return to the original window
     vim.api.nvim_set_current_win(current_win)
-
 end
 
 -- Define a command to trigger the function
