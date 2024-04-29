@@ -27,8 +27,8 @@ function display_ascii_art()
     -- Calculate the position of the bottom right corner
     local win_width = vim.api.nvim_get_option("columns")
     local win_height = vim.api.nvim_get_option("lines")
-    local art_width = 30
-    local art_height = 5
+    local art_width = ascii_art[1]:len()
+    local art_height = #ascii_art
     local row = win_height - art_height - 2 -- Leave space for status line & white thingy
     local col = win_width - art_width - 1
 

@@ -17,4 +17,4 @@ To have the cat spawn on neovim launch add the following line to your init.vim
 let g:cat_on_start = 1
    ```
 
-To have a different cat edit the ascii_art variable at the top of the function and edit the art_width and art_length variables accordinly
+To have a different cat edit the ascii_art variable at the top of the function, try to make it a rectangle for best results.
