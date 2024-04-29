@@ -1,6 +1,8 @@
 -- Global value so I can toggle
 local buf = nil
 
+local on_start = vim.api.nvim_get_var("cat_on_start")
+
 function display_ascii_art()
     local ascii_art = {
         [[  _._     _,-'""`-._    ]],
@@ -8,23 +10,26 @@ function display_ascii_art()
         [[    `-.-' \ )-`( , o o) ]],
         [[          `-    \`_`"'- ]]   
     }
-    
+
+    -- Kill the buffer if it exists
     if buf and vim.api.nvim_buf_is_valid(buf) then
         vim.api.nvim_buf_delete(buf, {force=true})
         buf = nil
         return
     end
 
-    -- Return to the original window
-    vim.api.nvim_set_current_win(current_win)
+    -- Save the current window
+    local current_win = vim.api.nvim_get_current_win()
 
+    -- Save the cursor position
+    local cursor = vim.api.nvim_win_get_cursor(current_win)
 
     -- Calculate the position of the bottom right corner
     local win_width = vim.api.nvim_get_option("columns")
     local win_height = vim.api.nvim_get_option("lines")
     local art_width = 30
     local art_height = 5
-    local row = win_height - art_height - 2 -- Leave space for status line
+    local row = win_height - art_height - 2 -- Leave space for status line & white thingy
     local col = win_width - art_width - 1
 
     -- Create a new buffer
@@ -43,7 +48,20 @@ function display_ascii_art()
     
     -- Return to the original window
     vim.api.nvim_set_current_win(current_win)
+
+    -- Restore the cursor position
+    vim.api.nvim_win_set_cursor(current_win, cursor)
 end
 
 -- Define a command to trigger the function
 vim.cmd([[command! Sirius lua display_ascii_art()]])
+
+-- Check if the option is set
+if on_start == nil then
+    on_start = false
+end
+
+-- Display the art on startup if the option is set
+if on_start then
+    display_ascii_art()
+end
