@@ -18,3 +18,6 @@ let g:cat_on_start = 1
    ```
 
 To have a different cat edit the ascii_art variable at the top of the function, try to make it a rectangle for best results.
+
+### Credits
+The cat ascii art was made by Blazej Kozlowski

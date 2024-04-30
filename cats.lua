@@ -5,12 +5,22 @@ local on_start = vim.api.nvim_get_var("cat_on_start")
 
 function display_ascii_art()
     local ascii_art = {
-        [[  _._     _,-'""`-._    ]],
-        [[(,-.`._,'(       |\`-/| ]],
-        [[    `-.-' \ )-`( , o o) ]],
-        [[          `-    \`_`"'- ]]   
+        [[       _                         ]],  
+        [[       \`*-.                     ]], 
+        [[        )  _`-,                  ]],
+        [[       .  : `. \                ]],  
+        [[       : _   '  }                ]], 
+        [[       ; *` _    `*-._           ]], 
+        [[       `-.-'          `~.        ]], 
+        [[         ;       `       `.      ]], 
+        [[         :.       .        \     ]], 
+        [[         . \  .   :   .-'   .    ]], 
+        [[         '  `+.;  ;  '      :    ]], 
+        [[         :  '  |    ;       ;-.  ]], 
+        [[         ; '   : :`-:     _.`* ; ]], 
+        [[      .*' /  .*' ; .*`- +'  `*'  ]], 
+        [[      `*-*   `*-*  `*-*'         ]]
     }
-
     -- Kill the buffer if it exists
     if buf and vim.api.nvim_buf_is_valid(buf) then
         vim.api.nvim_buf_delete(buf, {force=true})
