@@ -54,7 +54,7 @@ function display_ascii_art()
     vim.api.nvim_command("split")
     vim.api.nvim_win_set_buf(0, buf)
     vim.api.nvim_win_set_option(0, "winhl", "Normal:Normal")  -- Disable window highlighting
-    vim.api.nvim_win_set_config(0, {relative='editor', row=row, col=col, width=art_width, height=art_height, style='minimal'})
+    vim.api.nvim_win_set_config(0, {relative='win', row=row, col=col, width=art_width, height=art_height, style='minimal'})
     
     -- Return to the original window
     vim.api.nvim_set_current_win(current_win)
